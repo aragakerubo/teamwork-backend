@@ -11,6 +11,8 @@ const server = https.createServer(app);
 
 /**
  * Normalize a port into a number, string, or false.
+ * @param {*} val The port value to be parsed.
+ * @returns {(number|string|false)} Port value.
  */
 const normalizePort = val => {
   const port = parseInt(val, 10);
@@ -33,6 +35,8 @@ app.set('port', port);
 
 /**
  * Event listener for HTTP server "error" event.
+ * @param {Object} error The "error" response object.
+ * @returns {void}
  */
 const errorHandler = error => {
   if (error.syscall !== 'listen') {
@@ -59,6 +63,7 @@ const errorHandler = error => {
 
 /**
  * Event listener for HTTP server "listening" event.
+ * @returns {void}
  */
 const listenHandler = () => {
   const address = server.address();
