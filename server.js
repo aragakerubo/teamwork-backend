@@ -79,3 +79,5 @@ server.listen(port);
 server.on('error', errorHandler);
 
 server.on('listening', listenHandler);
+
+module.exports = server;

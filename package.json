@@ -4,6 +4,7 @@
   "description": "Teamwork is an ​ internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding.",
   "main": "server.js",
   "scripts": {
+    "test": "mocha tests/**",
     "start": "node server.js"
   },
   "repository": {
@@ -18,7 +19,10 @@
   },
   "homepage": "https://github.com/aragakerubo/teamwork-backend#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "express": "^4.17.1",
+    "mocha": "^6.2.2"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
