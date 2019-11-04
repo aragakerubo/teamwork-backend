@@ -1,0 +1,7 @@
+{
+  "name": "teamwork-backend",
+  "description": "Teamwork is an ​ internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding.",
+  "repository": "https://github.com/aragakerubo/teamwork-backend.git",
+  "logo": "https://teamwork-backend-staging.herokuapp.com/logo.svg",
+  "keywords": ["node", "express", "static"]
+}
