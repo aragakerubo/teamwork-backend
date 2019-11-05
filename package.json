@@ -4,7 +4,8 @@
   "description": "Teamwork is an ​ internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding.",
   "main": "server.js",
   "scripts": {
-    "test": "mocha tests/** --exit",
+    "dev": "nodemon server.js",
+    "test": "NODE_ENV=testing mocha tests/** --exit",
     "test:coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "start": "node server.js"
   },
@@ -25,6 +26,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mocha": "^6.2.2",
+    "pg": "^7.12.1",
     "swagger-jsdoc": "^3.4.0",
     "swagger-ui-express": "^4.1.2"
   },
