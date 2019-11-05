@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 pool.on('connect', () => {
-  console.log('Connected to the database');
+  console.log('Successfully connected to the database');
 });
 
 pool.on('error', err => {
