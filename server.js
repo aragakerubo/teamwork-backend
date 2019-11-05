@@ -1,13 +1,13 @@
 /**
  * Module dependencies.
  */
-const https = require('https');
+const http = require('http');
 const app = require('./app');
 
 /**
  * Create HTTP server.
  */
-const server = https.createServer(app);
+const server = http.createServer(app);
 
 /**
  * Normalize a port into a number, string, or false.
