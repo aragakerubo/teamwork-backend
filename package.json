@@ -5,8 +5,10 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "NODE_ENV=testing mocha tests/** --exit",
-    "test:coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "create": "./migrations.sh",
+    "create:test": "NODE_ENV=testing ./migrations.sh",
+    "test": "NODE_ENV=testing nyc mocha \"./**/*.spec.js\" --exit",
+    "test:coveralls": "npm test && nyc report --reporter=text-lcov | coveralls",
     "start": "node server.js"
   },
   "repository": {
@@ -25,8 +27,10 @@
     "chai-http": "^4.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "make-runnable": "^1.3.6",
     "mocha": "^6.2.2",
     "pg": "^7.12.1",
+    "sinon": "^7.5.0",
     "swagger-jsdoc": "^3.4.0",
     "swagger-ui-express": "^4.1.2"
   },
