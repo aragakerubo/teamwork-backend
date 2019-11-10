@@ -1,7 +1,20 @@
 language: node_js
 node_js:
   - 'node'
-scripts:
+services:
+  - postgresql
+script:
   - npm test
 after_success:
   - npm run test:coveralls
+env:
+  global:
+    - PGUSER_TEST=postgres
+    - PGPASSWORD_TEST=
+    - PGHOST_TEST=localhost
+    - PGPORT_PORT=5432
+    - PGDATABASE_TEST=postgres
+before_scripts:
+  - psql --version
+  - psql -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";' -U postgres
+  - npm run create:test

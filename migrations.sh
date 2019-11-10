@@ -1,0 +1,1 @@
+node ./db/models/userSchema createUserTable
