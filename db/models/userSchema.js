@@ -18,7 +18,7 @@ module.exports = {
     department VARCHAR(25) NOT NULL,
     address VARCHAR NOT NULL,
     avatar VARCHAR,
-    roleType VARCHAR(7) DEFAULT 'author',
+    roleType TEXT[] DEFAULT '{author}',
     createdOn TIMESTAMP DEFAULT NOW(),
     lastSeen TIMESTAMP);`
     );
