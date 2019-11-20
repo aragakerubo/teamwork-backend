@@ -1,8 +1,20 @@
 const express = require('express'),
   swaggerJSDoc = require('swagger-jsdoc'),
-  swaggerUi = require('swagger-ui-express');
+  swaggerUi = require('swagger-ui-express'),
+  bodyParser = require('body-parser');
+
+const { errorHandler } = require('./helpers/error-handler.helper'),
+  routes = require('./routes/index.route');
 
 const app = express();
+const router = express.Router();
+
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 
 // Extended: https://swagger.io/specification/
 const swaggerOptions = {
@@ -35,5 +47,9 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+app.use('/api/v1', routes(router));
+
+app.use(errorHandler);
 
 module.exports = app;
