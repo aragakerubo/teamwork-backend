@@ -4,6 +4,6 @@
 
 Teamwork is an ​ internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding.
 
-#### Deploy on Heroku
+#### Deploy to Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://teamwork-backend-staging.herokuapp.com/)
