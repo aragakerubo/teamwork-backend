@@ -39,9 +39,11 @@ const swaggerOptions = {
           description: 'Production server'
         }
       ]
-    }
+    },
+    basePath: '/api/v1',
+    schemes: ['http', 'https']
   },
-  apis: ['routes/*.js']
+  apis: ['routes/*.js', 'db/models/*.js']
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);

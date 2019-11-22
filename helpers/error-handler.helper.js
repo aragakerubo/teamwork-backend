@@ -1,5 +1,9 @@
 module.exports = {
-  errorHandler: (err, req, res) => {
+  errorHandler: (err, req, res, next) => {
+    if (res.headersSent) {
+      return next(err);
+    }
+
     if (typeof err === 'string') {
       return res.status(400).json({ status: 'error', error: err });
     }
