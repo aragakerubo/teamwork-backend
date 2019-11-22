@@ -14,7 +14,7 @@ module.exports = {
       expressJwt({ secret: process.env.JWT_SECRET }),
 
       (req, res, next) => {
-        const arr = Array.from(req.user.roleType);
+        const arr = req.user.roletype;
         const intersection = arr.some(el => roles.includes(el));
         if (roles.length && !intersection) {
           return res
@@ -33,10 +33,10 @@ module.exports = {
   createToken: (id, role) => {
     const token = jwt.sign(
       {
-        userId: id,
-        roleType: role
+        userid: id,
+        roletype: role
       },
-      process.env.SECRET,
+      process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
     return token;
